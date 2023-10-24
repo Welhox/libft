@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 16:08:50 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/24 16:56:27 by clundber         ###   ########.fr       */
+/*   Created: 2023/10/24 16:31:03 by clundber          #+#    #+#             */
+/*   Updated: 2023/10/24 16:53:38 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_memset(char *str, char x, int len)
+void	ft_bzero(char *str, int n)
+
 {
-	while (len > 0)
+	while (n > 0)
 	{
-		*str = x;
+		*str = '\0';
 		str++;
-		len--;
+		n--;
 	}
-	return (str);
 }
