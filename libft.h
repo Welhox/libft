@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 14:46:46 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/25 16:40:54 by clundber         ###   ########.fr       */
+/*   Created: 2023/10/25 17:58:07 by clundber          #+#    #+#             */
+/*   Updated: 2023/10/25 18:26:51 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#ifndef LIBFT_H
+#define LIBFT_H
+#include<unistd.h>
+#include<stdlib.h>
 
-{
-	if (c >= 0 && c <= 127)
-		return (1);
-	else
-		return (0);
-}
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+size_t	ft_strlen(const char *s);
+void	*ft_memset(void *str, int c, size_t len);
+void	ft_bzero(void *str, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+
+#endif

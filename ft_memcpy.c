@@ -6,20 +6,23 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:57:59 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/24 17:15:08 by clundber         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:14:13 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_memcpy(char *src, char *dest, int n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int	i;
+	char	*dstptr;
+	const char	*srcptr;
 
-	i = 0;
+	dstptr = dst;
+	srcptr = src;
 	while (n > 0)
 	{
-		dest[i] = src[i];
-		i++;
+		*dstptr = *srcptr;
+		dstptr++;
+		srcptr++;
 		n--;
 	}
-	return (dest);
+	return (dst);
 }

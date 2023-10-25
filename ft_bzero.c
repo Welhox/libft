@@ -6,17 +6,22 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:31:03 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/24 16:53:38 by clundber         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:18:30 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(char *str, int n)
+#include<string.h>
+
+void	ft_bzero(void *str, size_t n)
 
 {
+	unsigned char *ptr;
+
+	ptr = str;
 	while (n > 0)
 	{
-		*str = '\0';
-		str++;
+		*ptr = '\0';
+		ptr++;
 		n--;
 	}
 }
