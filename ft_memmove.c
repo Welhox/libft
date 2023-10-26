@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:04:54 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/26 15:28:01 by clundber         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:59:08 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			len--;
 		}
 	}
-	else if (dst <= src)
+	else
 	{
 		while (len > 0)
 		{
