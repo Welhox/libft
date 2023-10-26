@@ -6,12 +6,12 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:04:54 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/26 15:59:08 by clundber         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:30:02 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-
+#include <stdio.h>
 void	*ft_memmove(void *dst, const void *src, size_t len)
 
 {
@@ -20,6 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	srcptr = src;
 	dstptr = dst;
+	printf("%p", dstptr);
 	if (dstptr > srcptr)
 	{
 		while (len > 0)
@@ -40,3 +41,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+
+printf("%p", dstptr);
