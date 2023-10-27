@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:33:40 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/26 17:55:35 by clundber         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:41:44 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include<string.h>
 #include "libft.h"
 #include<stdlib.h>
+#include<ctype.h>
 /*int	ft_isalpha(int);
 int ft_isdigit(int);
 int ft_isalnum(int);
@@ -99,7 +100,7 @@ int	main(void)
 //	printf("%s\n", memmove(src2, src2+3, len));	
 //	printf("%s\n", ft_memcpy(dest+5, dest, len));
 //	printf("%s\n", memcpy(dest2+5, dest2, len));
-	char	dst[50] = "";
+/*	char	dst[50] = "";
 	char	src[50] = "hdhfd";
 	char	dst2[50] = "";
 	char	src2[50] = "hdhfd";
@@ -108,4 +109,54 @@ int	main(void)
 	printf("string = %s\n", dst);
 	printf("OG function = %zu\n", strlcat(dst2, src2, len));
 	printf("string = %s\n", dst);
+*/
+//char	c = '9';
+//printf("FT = %c\n", ft_toupper(c));
+//printf("OG = %c\n", toupper(c));
+
+//char	c = '0';
+//printf("FT = %c\n", ft_tolower(c));
+//printf("OG = %c\n", tolower(c));
+
+//char needle = 'q';
+//const char stack[22] = "is it here?";
+
+//printf("FT = %s\n", ft_strchr(stack, needle));
+//printf("OG = %s\n", strchr(stack, needle));
+
+//char needle = '\0';
+//const char stack[22] = "is it here?";
+
+//printf("FT = %s\n", ft_strrchr(stack, needle));
+//printf("OG = %s\n", strrchr(stack, needle));
+
+//const char s1[50] = "aaaaaa";
+//const char s2[50] = "aaaacaa";
+//int s1[] = {1,2,3,4};
+//int s2[] = {1,2,3,10};
+//int	n = 300;
+//	printf("OG = %d\n", strncmp(s1, s2, n));
+//	printf("FT = %d\n", ft_strncmp(s1, s2, n));
+//	printf("OG = %d\n", memcmp(s1, s2, n));
+//	printf("FT = %d\n", ft_memcmp(s1, s2, n));
+
+//const char s[50] = "aaaaaaaaabaaaaa";
+//int c = '\0';
+//int	n = 20;
+//	printf("OG = %s\n", memchr(s, c, n));
+//	printf("FT = %s\n", ft_memchr(s, c, n));
+
+//const char stack[50] = "This is stack, filled with hay";
+//const char needle[50] = "with";
+//int	n = 50;
+
+//	printf("OG = %s\n", strnstr(stack, needle, n));
+//	printf("FT = %s\n", ft_strnstr(stack, needle, n));
+
+const char str[] = "-fdsdsf";
+
+printf("OG = %d\n", atoi(str));
+printf("FT = %d\n", ft_atoi(str));
+
+
 }
