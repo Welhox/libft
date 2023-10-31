@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: welhox <welhox@student.42.fr>              +#+  +:+       +#+        */
+/*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:57:59 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/28 22:41:57 by welhox           ###   ########.fr       */
+/*   Updated: 2023/10/30 10:51:32 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*dstptr;
+	char		*dstptr;
 	const char	*srcptr;
 
 	dstptr = dst;

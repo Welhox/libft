@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:33:40 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/27 18:41:44 by clundber         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:41:44 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,19 @@ int	ft_strlcpy(char *dst, char *src, int len);
 */
 int	main(void)
 {
-	/*
-	char test = 'o';
-	int	charint = 100;
-	int	itest = 5;
-	char str[20] = "12345678";
-	char	src[50] = "bbbb aaaa aaaa bbbb";
-	char	src2[50] = "bbbb aaaa aaaa bbbb";
-	char	dest[50] = "aaaa bbbb aaaa bbbb";
-	char	dest2[50] = "aaaa bbbb aaaa bbbb";
-	int		n = 5;
-	int		n2 = 5;
-	int		len = 23;
-	*/
+	
+//	char test = 'o';
+//	int	charint = 100;
+//	int	itest = 5;
+//	char str[20] = "12345678";
+//	char	src[50] = "bbbb aaaa aaaa bbbb";
+//	char	src2[50] = "bbbb aaaa aaaa bbbb";
+//	char	dest[50] = "aaaa bbbb aaaa bbbb";
+//	char	dest2[50] = "aaaa bbbb aaaa bbbb";
+//	int		n = 5;
+//	int		n2 = 5;
+//	int		len = 23;
+
 
 //	if(ft_isalpha(test) == 0)
 //		printf("it is not alpha");
@@ -90,26 +90,26 @@ int	main(void)
 //	printf("%s\n", dest2);
 //	memcpy(dest2, src2, n2);
 //	printf("%s\n", dest2);
-/*
-	printf("source is = %s\n", src);
-	printf("dest = %s\n", dest);
-	ft_strlcpy(dest, src, len);
-	printf("modified dest = %s\n", dest);
-*/
-//	printf("%s\n", ft_memmove(src, src+3, len));
-//	printf("%s\n", memmove(src2, src2+3, len));	
+
+//	printf("source is = %s\n", src);
+//	printf("dest = %s\n", dest);
+//	ft_strlcpy(dest, src, len);
+//	printf("modified dest = %s\n", dest);
+
+//	printf("%s\n", ft_memmove(src+3, src, len));
+//	printf("%s\n", memmove(src2+3, src2, len));	
 //	printf("%s\n", ft_memcpy(dest+5, dest, len));
 //	printf("%s\n", memcpy(dest2+5, dest2, len));
-/*	char	dst[50] = "";
-	char	src[50] = "hdhfd";
-	char	dst2[50] = "";
-	char	src2[50] = "hdhfd";
-	int		len = 40;
+	/* char	dst[] = "aaa";
+	char	src[] = "bbb";
+	char	dst2[] = "aaa";
+	char	src2[] = "bbb";
+	int		len = 2;
 	printf("FT function = %zu\n", ft_strlcat(dst, src, len));
 	printf("string = %s\n", dst);
 	printf("OG function = %zu\n", strlcat(dst2, src2, len));
-	printf("string = %s\n", dst);
-*/
+	printf("string = %s\n", dst2); */
+
 //char	c = '9';
 //printf("FT = %c\n", ft_toupper(c));
 //printf("OG = %c\n", toupper(c));
@@ -146,17 +146,43 @@ int	main(void)
 //	printf("OG = %s\n", memchr(s, c, n));
 //	printf("FT = %s\n", ft_memchr(s, c, n));
 
-//const char stack[50] = "This is stack, filled with hay";
+
+//const char stack[50] = "this with is stack, filled with hay";
 //const char needle[50] = "with";
-//int	n = 50;
+//int	n = 9;
 
 //	printf("OG = %s\n", strnstr(stack, needle, n));
 //	printf("FT = %s\n", ft_strnstr(stack, needle, n));
 
-const char str[] = "-fdsdsf";
+const char str[] = "922337203687978";
+const char str2[] = "-9223372036056757";
 
 printf("OG = %d\n", atoi(str));
 printf("FT = %d\n", ft_atoi(str));
+printf("OG = %d\n", atoi(str2));
+printf("FT = %d\n", ft_atoi(str2));
 
 
+//printf("new string = %s\n", ft_substr("Start hejssan pa dej remove this", 500, 5));
+/* printf("the trimmed string = %s\n", ft_strtrim("lllaalaabZ trim this Zbaalaal2", "2")); */
+
+//int ito = 1;
+
+//printf("%d = %s\n", ito, ft_itoa(ito));
+/* int i;
+
+i = 6;
+while (i > 0) */
+/* int	i;
+
+	i = 0;
+	char	**array;
+	char	c;
+	c = ',';
+	array = ft_split("hello,this,is,string", c);
+	while (i > 5)
+	{
+	printf("the strings are = %s\n", array[i]);
+	i++;
+	} */
 }

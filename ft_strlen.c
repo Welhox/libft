@@ -6,16 +6,16 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:50:40 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/25 16:58:19 by clundber         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:52:13 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0')

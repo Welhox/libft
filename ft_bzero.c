@@ -6,16 +6,16 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:31:03 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/25 17:18:30 by clundber         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:50:48 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
+#include "libft.h"
 
 void	ft_bzero(void *str, size_t n)
 
 {
-	unsigned char *ptr;
+	unsigned char	*ptr;
 
 	ptr = str;
 	while (n > 0)

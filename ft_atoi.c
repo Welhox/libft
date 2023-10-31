@@ -3,21 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: welhox <welhox@student.42.fr>              +#+  +:+       +#+        */
+/*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:18:03 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/28 22:38:14 by welhox           ###   ########.fr       */
+/*   Updated: 2023/10/31 16:43:24 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+static int	ft_overflow(int neg, const char *str)
+
+{
+	if (str[neg] == '-')
+		return (0);
+	else
+		return (-1);
+}
 
 int	ft_atoi(const char *str)
 
 {
-	int	num;
-	int	i;
-	int	neg;
+	long int	num;
+	int			i;
+	int			neg; 
+	long int	buf;
 
-	neg = 0;
 	i = 0;
 	num = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
@@ -29,6 +38,9 @@ int	ft_atoi(const char *str)
 	{
 		num = (num * 10) + (str[i] - 48);
 		i++;
+		if (buf > num)
+			return (ft_overflow(neg, str));
+		buf = num;
 	}
 	if (str[neg] == '-')
 		num *= -1;

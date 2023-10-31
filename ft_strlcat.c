@@ -6,29 +6,28 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:16:56 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/26 17:57:38 by clundber         ###   ########.fr       */
+/*   Updated: 2023/10/31 11:52:45 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 {
-	int	si;
-	int	di;
-	int	len;
+	size_t	si;
+	size_t	di;
+	size_t	len;
 
-	di = 0;
-	si = 0;
-	while (dst[di])
-		di++;
-	while (src[si])
-		si++;
+	di = ft_strlen(dst);
+	si = ft_strlen(src);
 	len = (di + si);
+	if (dstsize <= 0)
+		return (len);
 	si = 0;
-	while (src[si] && (dstsize -1) > si)
+	while (src[si] && di < (dstsize -1))
 		dst[di++] = src[si++];
-	dst[di] = '\0';
+	if (di < dstsize)
+		dst[di] = '\0';
 	return (len);
 }
