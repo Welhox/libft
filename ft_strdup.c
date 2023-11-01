@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 17:04:40 by welhox            #+#    #+#             */
-/*   Updated: 2023/10/30 11:03:17 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:08:33 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strdup(const char *s)
 	while (s[len])
 		len++;
 	dupe = malloc ((len + 1) * sizeof(char));
+	if (!dupe)
+		return (0);
 	while (len >= 0)
 	{
 		dupe[i] = s[i];

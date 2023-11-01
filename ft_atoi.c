@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:18:03 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/31 16:43:24 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/01 12:31:30 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	num = 0;
+	buf = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	neg = i;

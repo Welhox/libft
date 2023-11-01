@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:54:20 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/31 14:10:44 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/01 14:56:21 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 {
-	char *str;
-	int	i;
-	int j;
+	char			*str;
+	unsigned int	i;
 
 	i = 0;
-	j = 0;
-	str = malloc(ft_strlen(s) * sizeof(char));
+	if (!s)
+		return (0);
+	str = malloc((ft_strlen(s) +1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	while (s[i])
 	{
-		str[i] = f(1, s[i]);
+		str[i] = f(i, s[i]);
 		i++;
-	}	
+	}
+	str[i] = '\0';
 	return (str);
 }

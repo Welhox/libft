@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:16:56 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/31 11:52:45 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/01 11:25:44 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	di;
 	size_t	len;
 
-	di = ft_strlen(dst);
+	di = 0;
+	while (dst[di] && di < dstsize -1)
+		di++;
 	si = ft_strlen(src);
 	len = (di + si);
-	if (dstsize <= 0)
-		return (len);
+	if (dstsize == 0 || dst[di] != '\0')
+		return (si + dstsize);
 	si = 0;
-	while (src[si] && di < (dstsize -1))
+	while (src[si] && di < dstsize -1)
 		dst[di++] = src[si++];
-	if (di < dstsize)
-		dst[di] = '\0';
+	dst[di] = '\0';
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:04:54 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/30 11:56:04 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/01 11:57:31 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	srcptr = src;
 	dstptr = dst;
+	if (!dst && !src)
+		return (0);
 	if (dstptr > srcptr)
 	{
 		while (len > 0)
@@ -28,15 +30,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			len--;
 		}
 	}
-	else
+	while (len > 0)
 	{
-		while (len > 0)
-		{
-			*dstptr = *srcptr;
-			dstptr++;
-			srcptr++;
-			len--;
-		}
+		*dstptr = *srcptr;
+		dstptr++;
+		srcptr++;
+		len--;
 	}
 	return (dst);
 }

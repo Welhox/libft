@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:33:40 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/31 16:41:44 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:01:07 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ void	ft_bzero(char *str, int n);
 char	*ft_memcpy(char*, char*, int);
 int	ft_strlcpy(char *dst, char *src, int len);
 */
+/* 	char	*ft_toother_mapi(unsigned int i, char c)
+
+{
+	while (i < 10)
+	{
+		if (c >= 97 && c <= 122)
+			c -= 32;
+		if (c >= 65 && c <= 90)
+			c += 32;
+		i++;
+	}
+	return (c);
+} */
+
 int	main(void)
 {
 	
@@ -100,11 +114,11 @@ int	main(void)
 //	printf("%s\n", memmove(src2+3, src2, len));	
 //	printf("%s\n", ft_memcpy(dest+5, dest, len));
 //	printf("%s\n", memcpy(dest2+5, dest2, len));
-	/* char	dst[] = "aaa";
-	char	src[] = "bbb";
-	char	dst2[] = "aaa";
-	char	src2[] = "bbb";
-	int		len = 2;
+	/* char	dst[] = "aaaaaa";
+	char	src[] = "lorem";
+	char	dst2[] = "aaaaaa";
+	char	src2[] = "lorem";
+	int		len = 4;
 	printf("FT function = %zu\n", ft_strlcat(dst, src, len));
 	printf("string = %s\n", dst);
 	printf("OG function = %zu\n", strlcat(dst2, src2, len));
@@ -154,17 +168,26 @@ int	main(void)
 //	printf("OG = %s\n", strnstr(stack, needle, n));
 //	printf("FT = %s\n", ft_strnstr(stack, needle, n));
 
-const char str[] = "922337203687978";
-const char str2[] = "-9223372036056757";
+/* const char str[] = "1";
+const char str2[] = "0";
 
 printf("OG = %d\n", atoi(str));
 printf("FT = %d\n", ft_atoi(str));
 printf("OG = %d\n", atoi(str2));
-printf("FT = %d\n", ft_atoi(str2));
+printf("FT = %d\n", ft_atoi(str2)); */
+
+	//STRTRIM
+
+char const *str = "   ";
+char const *set = " ";
+
+printf("The untrimmed string is = %s\n", str);
+printf("the trimmed strng is = %s\n", ft_strtrim(str, set));
+
 
 
 //printf("new string = %s\n", ft_substr("Start hejssan pa dej remove this", 500, 5));
-/* printf("the trimmed string = %s\n", ft_strtrim("lllaalaabZ trim this Zbaalaal2", "2")); */
+// printf("the trimmed string = %s\n", ft_strtrim("lllaalaabZ trim this Zbaalaal2", "2"));
 
 //int ito = 1;
 
@@ -176,13 +199,23 @@ while (i > 0) */
 /* int	i;
 
 	i = 0;
-	char	**array;
+	char	**array = malloc(500);
 	char	c;
-	c = ',';
-	array = ft_split("hello,this,is,string", c);
-	while (i > 5)
+	c = ' ';
+	array = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", c);
+	while (i < 15)
 	{
 	printf("the strings are = %s\n", array[i]);
 	i++;
 	} */
+
+	// FT_STRMAPI TEST
+
+
+/* 	char const	*s = "MAKE me DIFFERENT today";
+	char *newstr;
+	unsigned int i = 1;
+	newstr = ft_strmapi(s, ft_toother_mapi);
+	printf("new string = %s", newstr);
+ */
 }

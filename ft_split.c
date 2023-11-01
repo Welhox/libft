@@ -6,12 +6,15 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:10:59 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/31 16:13:10 by clundber         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:34:32 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+
+//static char *str()
+
 char	**ft_split(char const *s, char c)
 
 {
@@ -32,10 +35,10 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	i = 0;
-	array = (char **) malloc(sizeof(char) * (strnumber *ft_strlen(s) + 1));
-	while (s[i])
+	array = (char **) malloc(sizeof(char**) * (strnumber *ft_strlen(s) + 1));
+	while (s[i -1])
 	{
-		if (s[i] == c || s[i +1] == '\0')
+		if (s[i] == c || s[i] == '\0')
 		{
 			array[iarr] = ft_substr(s, idel, (i - idel));
 			idel = i +1;
@@ -44,6 +47,6 @@ char	**ft_split(char const *s, char c)
 		i++;	
 	}
 	array[iarr] = NULL;
-	printf("%s\n", array[0]);
+	//printf("%s\n", array[0]);
 	return (array);
 }
