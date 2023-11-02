@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:33:40 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/01 16:01:07 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:15:36 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,12 +178,12 @@ printf("FT = %d\n", ft_atoi(str2)); */
 
 	//STRTRIM
 
-char const *str = "   ";
-char const *set = " ";
+/* char const *str = "aaaaaaaaa";
+char const *set = "a";
 
-printf("The untrimmed string is = %s\n", str);
-printf("the trimmed strng is = %s\n", ft_strtrim(str, set));
-
+printf("The untrimmed string is =%s|\n", str);
+printf("the trimmed strng is =%s|\n", ft_strtrim(str, set));
+ */
 
 
 //printf("new string = %s\n", ft_substr("Start hejssan pa dej remove this", 500, 5));
@@ -196,19 +196,24 @@ printf("the trimmed strng is = %s\n", ft_strtrim(str, set));
 
 i = 6;
 while (i > 0) */
-/* int	i;
+
+	//FT_SPLIT
+
+	int	i;
 
 	i = 0;
 	char	**array = malloc(500);
 	char	c;
+	char str[] = "   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
 	c = ' ';
-	array = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", c);
-	while (i < 15)
+	array = ft_split(str, c);
+	while (array[i])
 	{
-	printf("the strings are = %s\n", array[i]);
+	printf("the strings are = %s|\n", array[i]);
 	i++;
-	} */
-
+	} 
+	printf("the strings are = %s|\n", array[i]);
+	free (array);
 	// FT_STRMAPI TEST
 
 

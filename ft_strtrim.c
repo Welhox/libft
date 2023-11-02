@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 19:17:10 by welhox            #+#    #+#             */
-/*   Updated: 2023/11/01 16:08:28 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/02 10:20:27 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		}
 		i++;
 	}
+	if (start > len)
+		return (ft_strdup(""));
 	return (ft_substr(s1, start, (len - start)));
 }

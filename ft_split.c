@@ -6,47 +6,81 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:10:59 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/31 17:34:32 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:15:32 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-//static char *str()
+static char	*ft_arrayadd(char const *s, int start, int len)
+
+{
+	char	*str;
+	int		i;
+
+	i = 0;
+	str = (char *) malloc(sizeof (char) * (len +1));
+	if (!str)
+	{
+		free (str);
+		return (0);
+	}
+	while (len > 0)
+	{
+		str[i] = s[start];
+		i++;
+		start++;
+		len--;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+static int	ft_strcount(char const *s, char c)
+
+{
+	int	stringcount;
+	int	i;
+
+	i = 0;
+	stringcount = 1;
+	while (s[i])
+	{
+		if ((s[i] == c || s[i] == '\0') && (s[i -1] != c))
+			stringcount++;
+		i++;
+	}
+	return (stringcount);
+}
 
 char	**ft_split(char const *s, char c)
 
 {
-	char			**array;
-	size_t			i;
-	unsigned int	idel;
-	int				iarr;
-	int				strnumber;
+	char	**array;
+	size_t	i;
+	size_t	start;
+	int		iarr;
 
 	i = 0;
 	iarr = 0;
-	idel = 0;
-	strnumber = 1;
-	while (s[i])
+	if (!s)
+		return (0);
+	array = (char **) malloc(sizeof(char *) * (ft_strcount(s, c) + 1));
+	if (!array)
+		return (0);
+	while (i < ft_strlen(s))
 	{
 		if (s[i] == c)
-			strnumber++;
-		i++;
-	}
-	i = 0;
-	array = (char **) malloc(sizeof(char**) * (strnumber *ft_strlen(s) + 1));
-	while (s[i -1])
-	{
-		if (s[i] == c || s[i] == '\0')
+			i++;
+		if (s[i] != c && s[i] != '\0')
 		{
-			array[iarr] = ft_substr(s, idel, (i - idel));
-			idel = i +1;
-			iarr++;
+			start = i;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+			array[iarr++] = ft_arrayadd(s, start, (i - start));
 		}
-		i++;	
 	}
-	array[iarr] = NULL;
-	//printf("%s\n", array[0]);
+	array[iarr] = (void *)0;
 	return (array);
 }
