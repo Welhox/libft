@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:33:40 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/02 15:15:36 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:38:15 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,19 @@ void	ft_bzero(char *str, int n);
 char	*ft_memcpy(char*, char*, int);
 int	ft_strlcpy(char *dst, char *src, int len);
 */
-/* 	char	*ft_toother_mapi(unsigned int i, char c)
+void /*char*/ft_toother_mapi(unsigned int i, char *c)
 
 {
 	while (i < 10)
 	{
-		if (c >= 97 && c <= 122)
-			c -= 32;
-		if (c >= 65 && c <= 90)
-			c += 32;
+		if (*c >= 97 && *c <= 122)
+			*c -= 32;
+		if (*c >= 65 && *c <= 90)
+			*c += 32;
 		i++;
 	}
-	return (c);
-} */
+	//return (c);
+} 
 
 int	main(void)
 {
@@ -189,17 +189,15 @@ printf("the trimmed strng is =%s|\n", ft_strtrim(str, set));
 //printf("new string = %s\n", ft_substr("Start hejssan pa dej remove this", 500, 5));
 // printf("the trimmed string = %s\n", ft_strtrim("lllaalaabZ trim this Zbaalaal2", "2"));
 
-//int ito = 1;
 
-//printf("%d = %s\n", ito, ft_itoa(ito));
-/* int i;
+	//FT_ITOA//
+/* int ito = 1;
 
-i = 6;
-while (i > 0) */
-
+printf("%d = %s\n", ito, ft_itoa(ito));
+ */
 	//FT_SPLIT
 
-	int	i;
+/* 	int	i;
 
 	i = 0;
 	char	**array = malloc(500);
@@ -214,6 +212,8 @@ while (i > 0) */
 	} 
 	printf("the strings are = %s|\n", array[i]);
 	free (array);
+ */
+
 	// FT_STRMAPI TEST
 
 
@@ -221,6 +221,14 @@ while (i > 0) */
 	char *newstr;
 	unsigned int i = 1;
 	newstr = ft_strmapi(s, ft_toother_mapi);
-	printf("new string = %s", newstr);
- */
+	printf("new string = %s", newstr); */
+
+	// FT_STRITERI TEST
+
+	char str[] = "HellOO BaBy";
+	
+	printf("the unmodified string = %s\n", str);
+	ft_striteri(str, ft_toother_mapi);
+	printf("the modified string = %s\n", str);
+ 
 }

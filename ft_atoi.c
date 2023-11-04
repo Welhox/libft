@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:18:03 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/01 12:31:30 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/04 11:41:13 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_atoi(const char *str)
 {
 	long int	num;
 	int			i;
-	int			neg; 
+	int			neg;
 	long int	buf;
 
 	i = 0;

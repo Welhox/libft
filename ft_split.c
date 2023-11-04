@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:10:59 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/02 15:15:32 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:06:52 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ static char	*ft_arrayadd(char const *s, int start, int len)
 	i = 0;
 	str = (char *) malloc(sizeof (char) * (len +1));
 	if (!str)
-	{
-		free (str);
 		return (0);
-	}
 	while (len > 0)
 	{
 		str[i] = s[start];
@@ -44,31 +41,28 @@ static int	ft_strcount(char const *s, char c)
 	int	i;
 
 	i = 0;
-	stringcount = 1;
+	stringcount = 0;
 	while (s[i])
 	{
-		if ((s[i] == c || s[i] == '\0') && (s[i -1] != c))
+		if (s[i] == c)
+			i++;
+		if (s[i] != c && s[i] != '\0')
+		{
 			stringcount++;
-		i++;
+			while ((s[i] != c && s[i] != '\0'))
+				i++;
+		}
 	}
 	return (stringcount);
 }
 
-char	**ft_split(char const *s, char c)
+static void	ft_arraymaker(char **array, int iarr, char const *s, char c)
 
 {
-	char	**array;
 	size_t	i;
 	size_t	start;
-	int		iarr;
 
 	i = 0;
-	iarr = 0;
-	if (!s)
-		return (0);
-	array = (char **) malloc(sizeof(char *) * (ft_strcount(s, c) + 1));
-	if (!array)
-		return (0);
 	while (i < ft_strlen(s))
 	{
 		if (s[i] == c)
@@ -82,5 +76,20 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	array[iarr] = (void *)0;
+}
+
+char	**ft_split(char const *s, char c)
+
+{
+	char	**array;
+	int		iarr;
+
+	iarr = 0;
+	if (!s)
+		return (0);
+	array = (char **) malloc(sizeof(char *) * (ft_strcount(s, c) + 1));
+	if (!array)
+		return (0);
+	ft_arraymaker(array, iarr, s, c);
 	return (array);
 }

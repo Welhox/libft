@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:58:07 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/02 13:07:33 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:36:43 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 #endif
