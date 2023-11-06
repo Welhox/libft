@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 19:17:10 by welhox            #+#    #+#             */
-/*   Updated: 2023/11/02 10:20:27 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:47:21 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = 0;
-	len = ft_length(s1, set);
 	if (!s1)
 		return (0);
+	len = ft_length(s1, set);
 	while (s1[start] && set[i])
 	{
 		if (set[i] == s1[start])

@@ -6,7 +6,7 @@
 #    By: clundber <clundber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 11:59:53 by clundber          #+#    #+#              #
-#    Updated: 2023/11/04 13:36:52 by clundber         ###   ########.fr        #
+#    Updated: 2023/11/06 15:11:58 by clundber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,11 @@ CFILES = ft_atoi.c ft_strlen.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 		ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c \
 		ft_toupper.c ft_itoa.c ft_strmapi.c ft_split.c ft_striteri.c
 
+BCFILES = ft_lstnew.c
+
 OFILES = $(CFILES:.c=.o)
+
+BOFILES = $(BCFILES:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -28,6 +32,11 @@ all: $(NAME)
 
 $(NAME): $(OFILES)
 	ar rcs $(NAME) $(OFILES)
+
+$(BNAME): $(BOFILES)
+	ar rcs $(BNAME) $(BOFILES)
+
+bonus: $(NAME) 
 
 clean:
 	rm -f $(OFILES)

@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:15:11 by welhox            #+#    #+#             */
-/*   Updated: 2023/11/01 15:10:03 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:04:22 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 
 {
-	char	*ptr;
+	void	*ptr;
 	size_t	i;
 
 	i = 4294967295 / nmemb;
@@ -27,10 +27,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (0);
-	while (i < (nmemb * size))
+	ft_bzero(ptr, (nmemb * size));
+/* 	while (i < (nmemb * size))
 	{
 		ptr[i] = '\0';
 		i++;
-	}
+	} */
 	return (ptr);
 }

@@ -6,11 +6,11 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 17:04:40 by welhox            #+#    #+#             */
-/*   Updated: 2023/11/01 16:08:33 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/06 09:58:30 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 

@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:13:21 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/31 18:03:56 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:43:47 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	if (c > 255)
-		return (0);
 	while (s[i] != '\0')
 		i++;
 	while (i >= 0)
 	{
-		if (c == s[i])
+		if ((char)c == s[i])
 			return ((char *)s + i);
 		i--;
 	}

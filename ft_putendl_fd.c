@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 12:09:42 by welhox            #+#    #+#             */
-/*   Updated: 2023/10/30 12:39:12 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/06 10:10:01 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 void	ft_putendl_fd(char *s, int fd)
 
 {
-	while (*s)
+	if (s)
 	{
-		write(fd, s, 1);
-		s++;
+		while (*s)
+		{
+			write(fd, s, 1);
+			s++;
+		}
+		write(fd, "\n", 1);
 	}
-	write(fd, "\n", 1);
 }

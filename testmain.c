@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:33:40 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/04 13:38:15 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:41:46 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,11 +138,11 @@ int	main(void)
 //printf("FT = %s\n", ft_strchr(stack, needle));
 //printf("OG = %s\n", strchr(stack, needle));
 
-//char needle = '\0';
-//const char stack[22] = "is it here?";
+//char needle = 't + 256';
+/* const char stack[22] = "is it here?";
 
-//printf("FT = %s\n", ft_strrchr(stack, needle));
-//printf("OG = %s\n", strrchr(stack, needle));
+printf("FT = %s\n", ft_strrchr(stack, 't' + 256)); //needle));
+printf("OG = %s\n", strrchr(stack, 't' + 256)); //needle)); */
 
 //const char s1[50] = "aaaaaa";
 //const char s2[50] = "aaaacaa";
@@ -176,10 +176,10 @@ printf("FT = %d\n", ft_atoi(str));
 printf("OG = %d\n", atoi(str2));
 printf("FT = %d\n", ft_atoi(str2)); */
 
-	//STRTRIM
+	//STRTRIM//
 
-/* char const *str = "aaaaaaaaa";
-char const *set = "a";
+/* char const *str = "     ";
+char const *set = " ";
 
 printf("The untrimmed string is =%s|\n", str);
 printf("the trimmed strng is =%s|\n", ft_strtrim(str, set));
@@ -191,10 +191,10 @@ printf("the trimmed strng is =%s|\n", ft_strtrim(str, set));
 
 
 	//FT_ITOA//
-/* int ito = 1;
+/* int ito = -183568;
 
-printf("%d = %s\n", ito, ft_itoa(ito));
- */
+printf("%d = %s\n", ito, ft_itoa(ito)); */
+
 	//FT_SPLIT
 
 /* 	int	i;
@@ -225,10 +225,28 @@ printf("%d = %s\n", ito, ft_itoa(ito));
 
 	// FT_STRITERI TEST
 
-	char str[] = "HellOO BaBy";
+/* 	char str[] = "HellOO BaBy";
 	
 	printf("the unmodified string = %s\n", str);
 	ft_striteri(str, ft_toother_mapi);
-	printf("the modified string = %s\n", str);
+	printf("the modified string = %s\n", str); */
  
-}
+
+
+	//////////BONUS//////////
+
+
+
+t_list nd1, nd2;
+
+char *p = "Hello";
+nd1.content = "hella";
+nd2 = *ft_lstnew(p);
+nd1.next = &nd2;
+
+printf("%s\n", nd2.content);
+
+//	char *str = "Hello";
+
+//	ft_lstnew("Hello");
+	}

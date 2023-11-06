@@ -6,24 +6,24 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:56:26 by clundber          #+#    #+#             */
-/*   Updated: 2023/10/27 15:28:13 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:23:21 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const char	*sptr;
-	char		needle;
+	unsigned char	*stack;
+	unsigned char	needle;
 
-	needle = c;
-	sptr = s;
-	while (sptr && n > 0)
+	needle = (unsigned char)c;
+	stack = (unsigned char *)s;
+	while (n > 0)
 	{
-		if (*sptr == needle)
-			return ((void *)sptr);
-		sptr++;
+		if (*stack == needle)
+			return ((void *) stack);
+		stack++;
 		n--;
 	}
 	return (0);

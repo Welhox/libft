@@ -6,35 +6,28 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:03:04 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/04 13:56:49 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/06 10:41:08 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strmaker(char *str, long int integer, int i, int j)
+static char	*ft_strmaker(char *str, long int integer, int len)
 
 {
-	char	*temp;
-
-	temp = (char *) malloc(12 * sizeof (char));
 	if (integer < 0)
 	{
-		str[i] = '-';
+		str[0] = '-';
 		integer *= -1;
-		i++;
 	}
+	str[len] = '\0';
+	len--;
 	while (integer > 0)
 	{
-		temp[j] = (integer % 10 + 48);
+		str[len] = (integer % 10 + 48);
 		integer /= 10;
-		j++;
+		len--;
 	}
-	temp[j] = '\0';
-	j--;
-	while (j >= 0)
-		str[i++] = temp[j--];
-	str[i] = '\0';
 	return (str);
 }
 
@@ -42,14 +35,20 @@ char	*ft_itoa(int n)
 
 {
 	char		*str;
-	int			i;
-	int			j;
 	long int	integer;
+	int			len;
 
 	integer = n;
-	j = 0;
-	i = 0;
-	str = (char *) malloc(12 * sizeof (char));
+	len = 0;
+	while (integer != 0)
+	{
+		integer /= 10;
+		len++;
+	}
+	if (n <= 0)
+		len++;
+	integer = n;
+	str = (char *) malloc((len +1) * sizeof (char));
 	if (!str)
 		return (0);
 	if (integer == 0)
@@ -58,6 +57,6 @@ char	*ft_itoa(int n)
 		str[1] = '\0';
 		return (str);
 	}
-	str = ft_strmaker(str, integer, i, j);
+	str = ft_strmaker(str, integer, len);
 	return (str);
 }

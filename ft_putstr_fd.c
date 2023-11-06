@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 11:52:24 by welhox            #+#    #+#             */
-/*   Updated: 2023/10/30 12:39:57 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/06 10:09:18 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 void	ft_putstr_fd(char *s, int fd)
 
 {
-	while (*s)
+	if (s)
 	{
-		write(fd, s, 1);
-		s++;
+		while (*s)
+		{
+			write(fd, s, 1);
+			s++;
+		}
 	}
 }

@@ -6,12 +6,19 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:10:59 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/04 13:06:52 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/06 09:58:13 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
+static void	ft_free(char **array, int iarr)
+
+{
+	while (iarr >= 0)
+		free(array[iarr--]);
+	free (array);
+}
 
 static char	*ft_arrayadd(char const *s, int start, int len)
 
@@ -72,7 +79,12 @@ static void	ft_arraymaker(char **array, int iarr, char const *s, char c)
 			start = i;
 			while (s[i] != c && s[i] != '\0')
 				i++;
-			array[iarr++] = ft_arrayadd(s, start, (i - start));
+			array[iarr] = ft_arrayadd(s, start, (i - start));
+			if (!array[iarr++])
+			{
+				ft_free(array, iarr);
+				break ;
+			}
 		}
 	}
 	array[iarr] = (void *)0;
