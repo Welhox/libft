@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:33:40 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/06 16:41:46 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:53:17 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -235,18 +235,54 @@ printf("%d = %s\n", ito, ft_itoa(ito)); */
 
 	//////////BONUS//////////
 
+	///LSTNEW////
 
-
-t_list nd1, nd2;
+/* t_list nd1, nd2;
 
 char *p = "Hello";
 nd1.content = "hella";
 nd2 = *ft_lstnew(p);
-nd1.next = &nd2;
+nd1.next = &nd2; */
 
-printf("%s\n", nd2.content);
+/* printf("%s\n", nd2.content); */
 
-//	char *str = "Hello";
 
-//	ft_lstnew("Hello");
-	}
+
+t_list *head = malloc (sizeof(t_list));
+head->content = "Let the sun shine";
+head->next = NULL;
+
+t_list *current = malloc(sizeof(t_list));
+current->content = "The cake is a lie!";
+current->next = NULL;
+head->next = current;
+
+current->next = ft_lstnew("Hello My darling");
+printf("Head is pointing at = %s\n", head->content);
+printf("current is pointing at = %s\n", current->content);
+
+t_list *new_front = malloc (sizeof(t_list));
+new_front->content = "Teletubbies";
+
+ft_lstadd_front(&head, new_front);
+
+printf("new_front is pointing at = %s\n", new_front->content);
+printf("Head is pointing at = %s\n", head->content);
+
+printf("the ammount of nodes = %d\n", ft_lstsize(head));
+
+printf("the last node of the list is = %s\n", ft_lstlast(head)->content);
+
+t_list *new_back = malloc (sizeof(t_list));
+new_back->content = "THE END";
+/* t_list **headd = malloc (sizeof(t_list));
+headd->content = "start";
+headd->next = NULL; 
+
+ft_lstadd_back(headd, new_back);
+
+printf("all ok");
+printf("the last node of the list is = %s\n", ft_lstlast(*headd)->content);
+*/
+
+}
