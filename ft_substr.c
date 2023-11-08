@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 17:43:47 by welhox            #+#    #+#             */
-/*   Updated: 2023/11/02 10:19:39 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:12:07 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
+	if (len > ft_strlen(s) || len > (ft_strlen(s) - start))
+		len = ft_strlen(s) - start;
 	substr = (char *) malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);

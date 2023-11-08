@@ -6,7 +6,7 @@
 #    By: clundber <clundber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 11:59:53 by clundber          #+#    #+#              #
-#    Updated: 2023/11/07 14:01:11 by clundber         ###   ########.fr        #
+#    Updated: 2023/11/08 12:07:05 by clundber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ CFILES = ft_atoi.c ft_strlen.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 
 BCFILES = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
+		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 OFILES = $(CFILES:.c=.o)
 

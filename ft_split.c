@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:10:59 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/06 09:58:13 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:08:16 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,13 @@
 static void	ft_free(char **array, int iarr)
 
 {
+	if (iarr > 0)
+		iarr--;
 	while (iarr >= 0)
-		free(array[iarr--]);
+	{
+		free(array[iarr]);
+		iarr--;
+	}
 	free (array);
 }
 
@@ -27,7 +32,7 @@ static char	*ft_arrayadd(char const *s, int start, int len)
 	int		i;
 
 	i = 0;
-	str = (char *) malloc(sizeof (char) * (len +1));
+	str = (char *) malloc(sizeof(char) * (len +1));
 	if (!str)
 		return (0);
 	while (len > 0)
@@ -80,11 +85,12 @@ static void	ft_arraymaker(char **array, int iarr, char const *s, char c)
 			while (s[i] != c && s[i] != '\0')
 				i++;
 			array[iarr] = ft_arrayadd(s, start, (i - start));
-			if (!array[iarr++])
+			if (!array[iarr])
 			{
 				ft_free(array, iarr);
 				break ;
 			}
+			iarr++;
 		}
 	}
 	array[iarr] = (void *)0;
@@ -103,5 +109,7 @@ char	**ft_split(char const *s, char c)
 	if (!array)
 		return (0);
 	ft_arraymaker(array, iarr, s, c);
+	if (!array)
+		return (0);
 	return (array);
 }

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 09:40:55 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/08 09:45:58 by clundber         ###   ########.fr       */
+/*   Created: 2023/11/08 11:59:37 by clundber          #+#    #+#             */
+/*   Updated: 2023/11/08 12:05:46 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 
 {
-	if (lst && new)
+	while (lst)
 	{
-		new->next = *lst;
-		*lst = new;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

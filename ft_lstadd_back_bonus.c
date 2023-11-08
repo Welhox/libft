@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:58:22 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/07 13:44:49 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:43:47 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		ft_lstlast(*lst)->next = new;
 	else
 		*lst = new;
+	new->next = 0;
 }
