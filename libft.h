@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:58:07 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/08 12:06:51 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:31:05 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);

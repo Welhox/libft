@@ -6,7 +6,7 @@
 #    By: clundber <clundber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 11:59:53 by clundber          #+#    #+#              #
-#    Updated: 2023/11/08 12:07:05 by clundber         ###   ########.fr        #
+#    Updated: 2023/11/09 15:31:10 by clundber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,16 +35,16 @@ all: $(NAME)
 $(NAME): $(OFILES)
 	ar rcs $(NAME) $(OFILES)
 
-$(BNAME): $(BOFILES)
-	ar rcs $(BNAME) $(BOFILES)
+bonus: .bonus
 
-bonus: $(BOFILES) $(OFILES)
+.bonus: $(BOFILES) $(OFILES)
 	ar rcs $(NAME) $(OFILES) $(BOFILES)
+	touch .bonus
 
 clean:
 	rm -f $(OFILES) $(BOFILES)
 
 fclean: clean
-	rm -f $(NAME) $(BNAME)
+	rm -f $(NAME) $(BNAME) .bonus
 	
 re: fclean $(NAME) 

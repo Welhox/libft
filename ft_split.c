@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:10:59 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/08 16:08:16 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:03:57 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static int	ft_strcount(char const *s, char c)
 	return (stringcount);
 }
 
-static void	ft_arraymaker(char **array, int iarr, char const *s, char c)
+static int	ft_arraymaker(char **array, int iarr, char const *s, char c)
 
 {
 	size_t	i;
@@ -88,12 +88,13 @@ static void	ft_arraymaker(char **array, int iarr, char const *s, char c)
 			if (!array[iarr])
 			{
 				ft_free(array, iarr);
-				break ;
+				return (0);
 			}
 			iarr++;
 		}
 	}
 	array[iarr] = (void *)0;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -105,11 +106,10 @@ char	**ft_split(char const *s, char c)
 	iarr = 0;
 	if (!s)
 		return (0);
-	array = (char **) malloc(sizeof(char *) * (ft_strcount(s, c) + 1));
+	array = malloc(sizeof(char *) * (ft_strcount(s, c) + 1));
 	if (!array)
 		return (0);
-	ft_arraymaker(array, iarr, s, c);
-	if (!array)
+	if (ft_arraymaker(array, iarr, s, c) == 0)
 		return (0);
 	return (array);
 }

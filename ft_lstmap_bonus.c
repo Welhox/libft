@@ -3,68 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: welhox <welhox@student.42.fr>              +#+  +:+       +#+        */
+/*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:06:06 by clundber          #+#    #+#             */
-/*   Updated: 2023/11/08 22:40:18 by welhox           ###   ########.fr       */
+/*   Created: 2023/11/09 10:55:30 by clundber          #+#    #+#             */
+/*   Updated: 2023/11/09 15:34:34 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 {
-	printf("1\n");
-	t_list *new_list;
-	t_list *new_list_ptr;
-	t_list *ptr;
-	t_list *prev;
+	t_list	*new_list;
+	t_list	*temp;
+	t_list	*content;
 
 	new_list = NULL;
-	ptr = NULL;
-	printf("5\n");
-	//ptr = lst;
-	//(*f)((char*)ptr->content);
-
-	new_list = ft_lstnew(f(lst->content));
-		printf("6");
-	prev = ptr;
-	ptr = lst->next;
-	(*del)(prev->content);
-	printf("2\n");
-	new_list_ptr = new_list;
-	printf("3\n");
-	free (prev);
-	//lst = ptr; 
-	printf("4\n");
-	while (ptr)
+	while (lst)
 	{
-		f(lst->content);
-		ft_lstadd_back(&new_list, ft_lstnew(lst->content));
-		ptr = lst->next;
-		del(lst->content);	
-		free (lst);
-		lst = ptr;
-	}
-/*  	while (lst)
-	{
-		ptr = ptr->next;
-		if(!(f(lst->content)))
+		content = f(lst->content);
+		temp = ft_lstnew(content);
+		if (!temp)
 		{
-			del(lst->content);	
-			free (lst);
-		} 
-		else
-		{
-			new_list = malloc(sizeof(t_list));
-			new_list->content = lst->content;
-			new_list->next = ptr;
-			del(lst->content);	
-			free (lst);
+			if (content != NULL && content != lst->content)
+				(*del)(content);
+			ft_lstclear(&new_list, del);
+			return (0);
 		}
-		lst = ptr;
-	}  */
-	return (new_list_ptr);
+		lst = lst->next;
+		ft_lstadd_back(&new_list, temp);
+	}
+	return (new_list);
 }
