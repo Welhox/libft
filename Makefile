@@ -6,7 +6,7 @@
 #    By: clundber <clundber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 11:59:53 by clundber          #+#    #+#              #
-#    Updated: 2023/11/09 15:31:10 by clundber         ###   ########.fr        #
+#    Updated: 2023/11/09 16:29:59 by clundber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,3 +48,5 @@ fclean: clean
 	rm -f $(NAME) $(BNAME) .bonus
 	
 re: fclean $(NAME) 
+
+.PHONY: all clean fclean bonus re

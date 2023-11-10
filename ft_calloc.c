@@ -6,7 +6,7 @@
 /*   By: clundber <clundber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:15:11 by welhox            #+#    #+#             */
-/*   Updated: 2023/11/09 15:55:04 by clundber         ###   ########.fr       */
+/*   Updated: 2023/11/10 12:51:14 by clundber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 {
 	void	*ptr;
+	size_t	maxsize;
 
+	maxsize = 0 - 1;
 	if (nmemb != 0 && size != 0)
 	{
-		if ((4294967295 / nmemb) < size)
+		if ((maxsize / nmemb) < size)
 			return (0);
 	}
 	if (nmemb * size > 2147483424)
